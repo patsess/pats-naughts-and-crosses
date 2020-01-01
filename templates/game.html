@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pat's Naughts an Crosses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+<body>
+    <h1>Naughts and Crosses!!</h1>
+    <p>What's your move? (r to reset game)</p>
+    <form method="POST">
+        <input name="player_game_move" autofocus="autofocus">
+        <input type="submit" value="Submit move">
+    </form>
+    <p><strong>{{error_msg}}</strong></p>
+    <p><strong>{{winning_msg}}</strong></p>
+
+    <div id="game-board">
+        <ul>
+            <h3>Game board:</h3>
+            <div class="content">
+                {% for row in game_board %}
+                <p>{{row}}</p>
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
+
+    <div id="move-history">
+        <h3>Move history:</h3>
+        <ul class="list">
+            {% for player_move, ai_move in game_move_history %}
+            <p>Player move: {{player_move}}</p>
+            <p>AI move: {{ai_move}}</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

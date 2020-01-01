@@ -1,0 +1,24 @@
+body {
+  background-color: #E9967A;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#title {
+  font-weight: 600;
+}
+
+#game-board {
+  font-family: monospace, monospace;
+}
+.content {
+  font-weight: 999;
+  font-size: 2.2em;
+}
+
+#move-history {
+  line-height: 0.5;
+}
+.list {
+  padding: 5px 0px;
+}
