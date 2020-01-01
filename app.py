@@ -57,7 +57,7 @@ def get_game_page_post():
         return _get_game_rendered_template(winning_msg=session['winner_msg'])
 
     ai_game_move = _make_ai_game_move()
-    if _make_ai_game_move is None:
+    if ai_game_move is None:
         session['winner_msg'] = 'A DRAW!!'
         return _get_game_rendered_template(winning_msg=session['winner_msg'])
 
